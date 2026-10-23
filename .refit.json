@@ -1,0 +1,26 @@
+{
+  "formatVersion": 1,
+  "apiVersion": "2024-06-20",
+  "before": "./refit/stripe-before.json",
+  "after": "./refit/stripe-after.json",
+  "fullDiff": false,
+  "providerConfig": "./refit/stripe.provider.json",
+  "image": "node:22-alpine",
+  "prepareDependencies": true,
+  "command": [
+    "npx",
+    "--no-install",
+    "tsc",
+    "--noEmit",
+    "--pretty",
+    "false",
+    "-p",
+    "."
+  ],
+  "compareTypeErrors": true,
+  "generatedChecks": {
+    "stripeMockImage": "stripe/stripe-mock:latest",
+    "beforeFixtures": "./refit/stripe-before-fixtures.json",
+    "afterFixtures": "./refit/stripe-after-fixtures.json"
+  }
+}
